@@ -6,7 +6,9 @@ import asyncio
 import logging
 import re
 
-auth=tweepy.OAuthHandler("w1eFQDLLUgz1w6MXideNBUUuv","BkPviFYTxmy2GJnZCa2oHaiAW66wg2RxBcLjr5SjE3vU0XBw0s")
+# auth=tweepy.OAuthHandler("w1eFQDLLUgz1w6MXideNBUUuv","BkPviFYTxmy2GJnZCa2oHaiAW66wg2RxBcLjr5SjE3vU0XBw0s")
+# lol free keys kids
+# dw I don't plan to do anything with it
 
 logging.basicConfig(level=logging.ERROR)
 
@@ -51,8 +53,6 @@ async def on_reaction_add(reaction, user):
                     auth.set_access_token(a[0], a[1])
                     stas = re.search("(?:status\/)(\d+)", reaction.message.content)
                     stas = stas.group(1)
-                    print(stas)
-                    # stas = reaction.message.content.split("/")[-1]
                     api = tweepy.API(auth)
                     api.verify_credentials()
                     api.retweet(stas)
@@ -63,8 +63,6 @@ async def on_reaction_add(reaction, user):
                     auth.set_access_token(a[0], a[1])
                     stas = re.search("(?:status\/)(\d+)", reaction.message.content)
                     stas = stas.group(1)
-                    print(stas)
-                    # stas = reaction.message.content.split("/")[-1]
                     api = tweepy.API(auth)
                     api.verify_credentials()
                     api.create_favorite(stas)
@@ -85,4 +83,4 @@ async def on_reaction_remove(reaction, user):
                     api.verify_credentials()
                     api.destroy_favorite(stas)
                     
-client.run('MzQwOTMwODEzMDQ4NzgyODU4.DF5sGg.ByXoRpgJEMXk1Z5V2RyoJiHzPFE')
+client.run('your discord bot key here')
